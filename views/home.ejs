@@ -1,0 +1,11 @@
+<%-include('partial/header');  -%> 
+<h1>Home</h1>
+<p><%= StartingContent%>  </p>
+ <%  posts.forEach(function(post){%>
+  <h1><%= post.Title %></h1>   //this is doing so that  the title and content can be presented on screen
+  <p>
+    <%= post.Content.substring(0,100)+"..." %> <!--for truncating the size of the string we have use here a substring function -->
+    <a href="/posts/<%= post.Title %> ">Readmore</a>
+   </p>
+  <%});%>
+<%-include('partial/footer');  -%> 
